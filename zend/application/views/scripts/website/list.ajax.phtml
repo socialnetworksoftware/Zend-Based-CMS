@@ -1,0 +1,22 @@
+  <table border="1">
+    <tr>
+	  <th>ID</th>
+	  <th>Title</th>	  
+	  <th>Url</th>	  
+	  <th>Action</th>	  
+	</tr>
+  <? $datas = $this->datas;
+     for($i = 0; $i< count($datas);$i++){ ?>
+    <tr>
+	  <td><?=$datas[$i]['id']?></td>	
+	  <td><?=$datas[$i]['title']?></td>	
+	  <td><?=$datas[$i]['url']?></td>	
+	  <td>
+	    <a href="<?=$this->base_url?>/edit/id/<?=$datas[$i]['id']?>">Edit</a>
+		|
+	    <a href="<?=$this->base_url?>/del/id/<?=$datas[$i]['id']?>">Delete</a>		
+	  </td>	  
+	</tr> 
+  <? } ?>
+  </table>
+  <div id="paginator" ><?=($this->display_page);?></div>
